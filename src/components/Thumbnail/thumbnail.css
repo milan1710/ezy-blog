@@ -1,0 +1,120 @@
+/* Thumbnail Styles - Perfect Centering for Mobile & Desktop */
+
+.thumbnail-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail-container:hover .thumbnail-image {
+  transform: scale(1.05);
+}
+
+/* Overlay with Centered Title */
+.thumbnail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Title - Perfectly Centered */
+.thumbnail-title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+  max-width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 768px) {
+  .thumbnail-title {
+    font-size: 1rem;
+    -webkit-line-clamp: 2;
+    padding: 0 10px;
+  }
+  
+  .thumbnail-overlay {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thumbnail-title {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 2;
+    line-height: 1.3;
+  }
+  
+  .thumbnail-overlay {
+    padding: 12px;
+  }
+}
+
+/* For Very Small Screens */
+@media (max-width: 360px) {
+  .thumbnail-title {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2;
+  }
+}
+
+/* Ensure perfect centering for all screen sizes */
+.thumbnail-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Add a subtle gradient for better text readability */
+.thumbnail-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(220, 38, 38, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  z-index: 1;
+}
+
+.thumbnail-title {
+  position: relative;
+  z-index: 2;
+}
