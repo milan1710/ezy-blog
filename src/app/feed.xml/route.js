@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import "../styles/globals.css";
+import "../../styles/globals.css";
 
 export const metadata = {
   title: "Ezy Digital Blog - AI Powered Digital Marketing & SEO Blog",

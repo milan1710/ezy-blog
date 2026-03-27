@@ -38,8 +38,7 @@ export default function BlogCard({ blog, featured = false, popular = false }) {
 
   return (
     <article className={`blog-card ${featured ? "featured-card" : ""} ${popular ? "popular-card" : ""}`}>
-      // Update the Link href to use category-based URL
-<Link href={`/blog/${blog.category?.slug}/${blog.slug}`} className="blog-card-link">
+      <Link href={`/blog/${blog.category?.slug}/${blog.slug}`}>
         {/* Thumbnail Section */}
         <div className="blog-card-thumbnail">
           <Thumbnail title={blog.title} />

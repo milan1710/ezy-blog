@@ -2,12 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
 body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background: #ffffff;
-  color: #111;
+  color: #1f2937;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 
 a {
@@ -15,8 +17,62 @@ a {
   color: inherit;
 }
 
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-red {
+  color: #dc2626;
+}
+
+.bg-red {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

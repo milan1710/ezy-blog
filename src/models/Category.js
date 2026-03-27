@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const CategorySchema = new mongoose.Schema({
   name: {
@@ -15,14 +15,10 @@ const CategorySchema = new mongoose.Schema({
     type: String,
     default: "/thumbnail/category.png",
   },
-  description: {
-    type: String,
-    default: "",
-  },
   createdAt: {
     type: Date,
     default: Date.now,
   },
 });
 
-export default mongoose.models.Category || mongoose.model('Category', CategorySchema);
+export default (mongoose.models.Category || mongoose.model("Category", CategorySchema));
