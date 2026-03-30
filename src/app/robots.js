@@ -6,6 +6,6 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: `${process.env.BASE_URL}/sitemap.xml`,
+    sitemap: "https://blog.ezydigital.in/sitemap.xml",
   };
 }

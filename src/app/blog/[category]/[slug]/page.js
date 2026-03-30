@@ -188,7 +188,7 @@ export async function generateMetadata({ params }) {
   const imageUrl = blog.thumbnail || `${baseUrl}/thumbnail/template.png`;
 
   return {
-    title: `${blog.title} | Ezy Digital Blog`,
+    title: blog.title,
     description: description,
     keywords: `${blog.category?.name}, digital marketing, SEO tips, business growth, ${blog.title}`,
     authors: [{ name: "Ezy Digital" }],

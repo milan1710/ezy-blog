@@ -1,6 +1,7 @@
 import Link from "next/link";
 import connectDB from "@/lib/mongodb";
 import Category from "@/models/Category";
+import Blog from "@/models/Blog";
 import { Suspense } from "react";
 import "./categories.css";
 
@@ -17,17 +18,21 @@ function LoadingSkeleton() {
 
 async function getAllCategories() {
   await connectDB();
+  
+  // Get all categories
   const categories = await Category.find({})
     .sort({ name: 1 })
     .lean();
   
+  // Convert to plain JSON
+  const serializedCategories = JSON.parse(JSON.stringify(categories));
+  
   // Get blog count for each category
-  const Blog = (await import("@/models/Blog")).default;
   const categoriesWithCount = await Promise.all(
-    categories.map(async (category) => {
+    serializedCategories.map(async (category) => {
       const blogCount = await Blog.countDocuments({ category: category._id });
       return {
-        ...JSON.parse(JSON.stringify(category)),
+        ...category,
         blogCount
       };
     })
@@ -173,6 +178,8 @@ export default async function CategoriesPage() {
                             src={category.thumbnail || "/thumbnail/category.png"} 
                             alt={category.name}
                             loading="lazy"
+                            width="400"
+                            height="300"
                           />
                           <div className="category-card-overlay">
                             <div className="category-card-content">

@@ -147,22 +147,6 @@ export default async function Home({ searchParams }) {
                 Get high-quality, SEO-optimized blogs that drive traffic, generate leads, and boost your online presence. 
                 Join thousands of businesses growing with Ezy Digital.
               </p>
-              <div className="hero-search">
-                <form action="/search" method="GET" className="search-form">
-                  <input
-                    type="text"
-                    name="q"
-                    placeholder="Search articles, topics, or guides..."
-                    className="search-input"
-                    aria-label="Search blogs"
-                  />
-                  <button type="submit" className="search-btn" aria-label="Search">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                      <path d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                  </button>
-                </form>
-              </div>
             </div>
           </div>
         </section>
